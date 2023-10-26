@@ -91,4 +91,25 @@ public class QuicksortTest {
         String resultFormatted = QuixFixOracleHelper.format(result,true);
         org.junit.Assert.assertEquals("[1,2,4,6,9,10,14,15,16,18,19]", resultFormatted);
     }
+
+    @org.junit.Test(timeout = 2000)
+    public void test_13() throws java.lang.Exception {
+        java.util.ArrayList result = Quicksort.quicksort(new java.util.ArrayList(java.util.Arrays.asList()));
+        String resultFormatted = QuixFixOracleHelper.format(result,true);
+        org.junit.Assert.assertEquals("[]", resultFormatted);
+    }
+
+    @org.junit.Test(timeout = 2000)
+    public void test_14() throws java.lang.Exception {
+        java.util.ArrayList result = Quicksort.quicksort(new java.util.ArrayList(java.util.Arrays.asList(0,0,0)));
+        String resultFormatted = QuixFixOracleHelper.format(result,true);
+        org.junit.Assert.assertEquals("[0,0,0]", resultFormatted);
+    }
+
+    @org.junit.Test(timeout = 2000)
+    public void test_15() throws java.lang.Exception {
+        java.util.ArrayList result = Quicksort.quicksort(new java.util.ArrayList(java.util.Arrays.asList(13,-1,14)));
+        String resultFormatted = QuixFixOracleHelper.format(result,true);
+        org.junit.Assert.assertEquals("[-1,13,14]", resultFormatted);
+    }
 }
